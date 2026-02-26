@@ -4,17 +4,15 @@ import type { Project } from "@/types/portfolio";
 
 type ProjectCardProps = {
   project: Project;
-  animationDelayMs: number;
 };
 
-export function ProjectCard({ project, animationDelayMs }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
   const hasLiveUrl = project.liveUrl && project.liveUrl !== "#";
   const hasRepoUrl = project.repoUrl && project.repoUrl !== "#";
 
   return (
     <article
-      className="surface-card fade-in flex h-full flex-col px-5 py-5 transition duration-200 hover:shadow-[0_16px_28px_rgba(20,20,20,0.12)]"
-      style={{ animationDelay: `${animationDelayMs}ms` }}
+      className="surface-card flex h-full flex-col px-5 py-5 transition duration-200 hover:shadow-[0_16px_28px_rgba(20,20,20,0.12)]"
     >
       <div className="group">
         {hasLiveUrl ? (

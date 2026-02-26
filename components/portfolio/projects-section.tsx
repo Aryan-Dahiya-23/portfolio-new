@@ -1,4 +1,5 @@
 import type { Project } from "@/types/portfolio";
+import { MotionReveal } from "@/components/portfolio/motion-reveal";
 import { ProjectCard } from "@/components/portfolio/project-card";
 
 type ProjectsSectionProps = {
@@ -15,11 +16,9 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
 
       <div className="grid gap-4 md:grid-cols-3">
         {projects.map((project, index) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            animationDelayMs={120 + index * 110}
-          />
+          <MotionReveal key={project.id} delay={0.1 + index * 0.08}>
+            <ProjectCard project={project} />
+          </MotionReveal>
         ))}
       </div>
     </section>

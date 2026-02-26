@@ -4,27 +4,7 @@ type ContactSectionProps = {
   contact: ContactData;
 };
 
-const call = async () => {
-  try {
-    const response = await fetch("https://chatapp-backend-q3xn.onrender.com/", {
-      method: "GET",
-      cache: "no-store",
-    });
-    const body = await response.text();
-    console.log(
-      "[chatapp-backend] status:",
-      response.status,
-      "body:",
-      body.slice(0, 200),
-    );
-  } catch {
-    // Best-effort ping; rendering should not fail if this request fails.
-    console.log("[chatapp-backend] request failed");
-  }
-};
-
 export function ContactSection({ contact }: ContactSectionProps) {
-  // call();
   return (
     <section
       id="contact"
