@@ -18,7 +18,7 @@ export const heroData: HeroData = {
     href: "#projects",
   },
   secondaryCta: {
-    label: "Download Resume",
+    label: "View Resume",
     href: "/resume-aryan-dahiya.pdf",
   },
 };
