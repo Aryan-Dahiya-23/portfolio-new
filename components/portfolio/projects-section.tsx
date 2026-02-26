@@ -1,8 +1,8 @@
-import type { Project } from "@/types/portfolio";
+import type { PersonalProject } from "@/types/portfolio";
 import { ProjectCard } from "@/components/portfolio/project-card";
 
 type ProjectsSectionProps = {
-  projects: Project[];
+  projects: PersonalProject[];
 };
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {

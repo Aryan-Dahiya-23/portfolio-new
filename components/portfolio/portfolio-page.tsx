@@ -13,10 +13,10 @@ import { contactData, heroData, navItems, siteName } from "@/data/site";
 import { experienceItems, experienceProjects } from "@/data/experience";
 import { projectItems } from "@/data/projects";
 import { skillItems } from "@/data/skills";
-import type { Project } from "@/types/portfolio";
+import type { ExperienceProject } from "@/types/portfolio";
 
 export function PortfolioPage() {
-  const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [activeProject, setActiveProject] = useState<ExperienceProject | null>(null);
 
   useEffect(() => {
     if (!activeProject) {

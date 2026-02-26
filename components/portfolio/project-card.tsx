@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-import type { Project } from "@/types/portfolio";
+import type { PersonalProject } from "@/types/portfolio";
 
 type ProjectCardProps = {
-  project: Project;
+  project: PersonalProject;
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {

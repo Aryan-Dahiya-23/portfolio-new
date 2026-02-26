@@ -1,11 +1,11 @@
 "use client";
 
-import type { ExperienceItem, Project } from "@/types/portfolio";
+import type { ExperienceItem, ExperienceProject } from "@/types/portfolio";
 
 type ExperienceSectionProps = {
   items: ExperienceItem[];
-  projects: Project[];
-  onOpenProject: (project: Project) => void;
+  projects: ExperienceProject[];
+  onOpenProject: (project: ExperienceProject) => void;
 };
 
 export function ExperienceSection({

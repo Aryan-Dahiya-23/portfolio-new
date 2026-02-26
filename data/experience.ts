@@ -1,6 +1,6 @@
-import type { ExperienceItem, Project } from "@/types/portfolio";
+import type { ExperienceItem, ExperienceProject } from "@/types/portfolio";
 
-export const experienceProjects: Project[] = [
+export const experienceProjects: ExperienceProject[] = [
   {
     id: "sendit-marketplace",
     title: "SendIT Marketplace",
@@ -8,23 +8,6 @@ export const experienceProjects: Project[] = [
       "Built a customer-facing marketplace for product discovery, checkout, and subscription transactions.",
     overview:
       "A production marketplace application at SendIT Markets focused on buyer-side commerce journeys. The platform covers catalog browsing, product detail views, cart/checkout flows, and transaction handling with wallet-enabled payment integrations.",
-    highlights: [
-      "Implemented responsive marketplace UI for catalog discovery, product pages, and purchase journeys.",
-      "Integrated web3.js wallet flows and payment/subscription transactions for user checkout.",
-      "Optimized buyer-side data fetching and caching using React Query for faster interactions.",
-      "Worked with backend services to support order lifecycle and transaction reliability.",
-    ],
-    stack: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "React Query",
-      "web3.js",
-      "Go",
-      "REST APIs",
-      "RBAC",
-    ],
-    image: "/experience/sendit/home-page.jpeg",
     gallery: [
       "/experience/sendit/home-page.jpeg",
       "/experience/sendit/product-page.jpeg",
@@ -34,7 +17,6 @@ export const experienceProjects: Project[] = [
       "/experience/sendit/testimonial-page.jpeg",
     ],
     liveUrl: "https://www.sendit.markets",
-    repoUrl: "#",
   },
   {
     id: "sendit-seller-dashboard",
@@ -43,23 +25,6 @@ export const experienceProjects: Project[] = [
       "Built a seller operations dashboard for listings, order management, and performance analytics.",
     overview:
       "A dedicated seller-facing workspace at SendIT Markets for day-to-day operations. It centralizes product listing management, order tracking, analytics insights, and account-level controls with secure role-based access.",
-    highlights: [
-      "Developed the dashboard from scratch for listings, orders, and analytics workflows.",
-      "Improved data retrieval speed by ~40% and reduced server requests by ~30% with React Query.",
-      "Built and maintained Go REST APIs supporting core dashboard operations.",
-      "Implemented RBAC and stronger API validation/error handling for reliability.",
-    ],
-    stack: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "React Query",
-      "web3.js",
-      "Go",
-      "REST APIs",
-      "RBAC",
-    ],
-    image: "/experience/sendit/dashboard-overview.jpeg",
     gallery: [
       "/experience/sendit/dashboard-overview.jpeg",
       "/experience/sendit/dashboard-reviews.jpeg",
@@ -69,7 +34,6 @@ export const experienceProjects: Project[] = [
       "/experience/sendit/dashboard-deliverables.jpeg",
     ],
     liveUrl: "https://dashboard.sendit.markets",
-    repoUrl: "#",
   },
   {
     id: "law-firm-dashboard",
@@ -78,23 +42,6 @@ export const experienceProjects: Project[] = [
       "Built secure case/document workflows with scalable file handling and metadata search.",
     overview:
       "A document-heavy legal operations dashboard developed as a freelance engagement. The system supports case-level document management, secure file uploads, retrieval at scale, and efficient filtering/search across structured metadata.",
-    highlights: [
-      "Built dashboard UI with Next.js + React Query for smooth data-driven workflows.",
-      "Developed Node.js REST APIs for case and document operations.",
-      "Designed Prisma + PostgreSQL schema for metadata filtering and search.",
-      "Implemented S3 upload + file streaming for large PDF/image retrieval.",
-    ],
-    stack: [
-      "Next.js",
-      "React Query",
-      "Node.js",
-      "Express",
-      "Prisma",
-      "PostgreSQL",
-      "S3",
-      "File Streaming",
-    ],
-    image: "/experience/resolvex/resolvex-1.jpeg",
     gallery: [
       "/experience/resolvex/resolvex-1.jpeg",
       "/experience/resolvex/resolvex-3.jpeg",
@@ -102,7 +49,6 @@ export const experienceProjects: Project[] = [
       "/experience/resolvex/resolvex-5.jpeg",
     ],
     liveUrl: "https://resolvex.co.in",
-    repoUrl: "#",
   },
 ];
 
@@ -122,6 +68,7 @@ export const experienceItems: ExperienceItem[] = [
       "Designed and implemented an end-to-end messaging system between buyers and sellers for direct communication and faster issue resolution.",
       "Built and maintained REST APIs in Go, supporting dashboard workflows and core product integrations.",
       "Implemented role-based access control (RBAC) and improved API reliability with better validation and error handling.",
+      "Contributed to growth outcomes that supported a $300K+ pre-seed raise, 2K+ seller onboarding, and $20K+ in marketplace sales.",
     ],
     techStack: [
       "Next.js",

@@ -29,8 +29,6 @@ export const contactData: ContactData = {
     "Have an interesting product, role, or collaboration in mind? Reach out and let's talk.",
   email: "aryan23dahiya@gmail.com",
   emailButtonLabel: "Email Me",
-  resumeUrl: "/resume-aryan-dahiya.pdf",
-  resumeButtonLabel: "Download Resume",
   links: [
     { label: "GitHub", href: "https://github.com/Aryan-Dahiya-23" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/aryan-dahiya-a72320249" },

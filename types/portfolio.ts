@@ -28,17 +28,23 @@ export type ExperienceItem = {
   projectIds: string[];
 };
 
-export type Project = {
+export type PersonalProject = {
+  id: string;
+  title: string;
+  summary: string;
+  stack: string[];
+  image: string;
+  liveUrl: string;
+  repoUrl: string;
+};
+
+export type ExperienceProject = {
   id: string;
   title: string;
   summary: string;
   overview: string;
-  highlights: string[];
-  stack: string[];
-  image: string;
   gallery: string[];
   liveUrl: string;
-  repoUrl: string;
 };
 
 export type ContactLink = {
@@ -51,7 +57,5 @@ export type ContactData = {
   description: string;
   email: string;
   emailButtonLabel: string;
-  resumeUrl: string;
-  resumeButtonLabel: string;
   links: ContactLink[];
 };

@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-import type { Project } from "@/types/portfolio";
+import type { ExperienceProject } from "@/types/portfolio";
 
 type ProjectDrawerProps = {
-  activeProject: Project | null;
+  activeProject: ExperienceProject | null;
   onClose: () => void;
 };
 
