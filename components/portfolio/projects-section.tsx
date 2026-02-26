@@ -10,7 +10,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
     <section id="projects" className="space-y-4">
       <div>
         <p className="heading-kicker">Selected Work</p>
-        <h2 className="mt-2 text-3xl font-semibold tracking-tight">Projects</h2>
+        <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">Projects</h2>
       </div>
 
       <div className="grid gap-4 md:grid-cols-3">

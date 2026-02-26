@@ -43,9 +43,9 @@ export function PortfolioPage() {
     <>
       <div className="pb-16 pt-8 sm:pt-12">
         <Header siteName={siteName} navItems={navItems} />
-        <div className="h-6 sm:h-8" aria-hidden="true" />
+        <div className="h-5 sm:h-8" aria-hidden="true" />
 
-        <main className="container-grid space-y-8">
+        <main className="container-grid space-y-6 sm:space-y-8">
           <HeroSection hero={heroData} />
           <SkillsSection skills={skillItems} />
           <ExperienceSection

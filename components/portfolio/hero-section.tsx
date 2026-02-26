@@ -34,21 +34,21 @@ export function HeroSection({ hero }: HeroSectionProps) {
   };
 
   return (
-    <section className="surface-card relative overflow-hidden px-6 py-10 sm:px-10 sm:py-14">
+    <section className="surface-card relative overflow-hidden px-5 py-8 sm:px-10 sm:py-14">
       <div className="pointer-events-none absolute -left-16 -top-16 h-48 w-48 rounded-full bg-[var(--brand-soft)] blur-2xl" />
       <div className="pointer-events-none absolute -bottom-16 -right-20 h-56 w-56 rounded-full bg-[rgba(13,148,136,0.15)] blur-2xl" />
 
-      <h1 className="fade-in delay-1 mt-3 max-w-3xl text-4xl font-semibold leading-tight sm:text-6xl">
+      <h1 className="fade-in delay-1 mt-2 max-w-3xl text-3xl font-semibold leading-tight sm:mt-3 sm:text-5xl lg:text-6xl">
         {hero.title}
       </h1>
-      <p className="fade-in delay-2 mt-5 max-w-2xl text-base leading-relaxed text-[var(--text-muted)] sm:text-lg">
+      <p className="fade-in delay-2 mt-4 max-w-2xl text-sm leading-relaxed text-[var(--text-muted)] sm:mt-5 sm:text-lg">
         {hero.description}
       </p>
 
-      <div className="fade-in delay-3 mt-8 flex flex-wrap gap-3">
+      <div className="fade-in delay-3 mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
         <a
           href={hero.primaryCta.href}
-          className="hero-cta-primary rounded-full bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
+          className="hero-cta-primary inline-flex w-full items-center justify-center rounded-full bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90 sm:w-auto"
           onClick={(event) => handleSectionClick(event, hero.primaryCta.href)}
           target={isPrimarySectionLink ? undefined : "_blank"}
           rel={isPrimarySectionLink ? undefined : "noreferrer"}
@@ -57,7 +57,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
         </a>
         <a
           href={hero.secondaryCta.href}
-          className="rounded-full border border-[var(--line)] bg-white px-5 py-2.5 text-sm font-medium transition hover:bg-[var(--bg-soft)]"
+          className="inline-flex w-full items-center justify-center rounded-full border border-[var(--line)] bg-white px-5 py-2.5 text-sm font-medium transition hover:bg-[var(--bg-soft)] sm:w-auto"
           onClick={(event) => handleSectionClick(event, hero.secondaryCta.href)}
           target={isSecondarySectionLink ? undefined : "_blank"}
           rel={isSecondarySectionLink ? undefined : "noreferrer"}

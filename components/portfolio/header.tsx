@@ -65,14 +65,16 @@ export function Header({ siteName, navItems }: HeaderProps) {
   }, [isOpen]);
 
   return (
-    <header className="container-grid mb-14 fade-in">
-      <nav className="surface-card flex items-center justify-between px-5 py-4 sm:px-7">
-        <p className="font-semibold tracking-tight">{siteName}</p>
+    <header className="container-grid mb-10 fade-in sm:mb-14">
+      <nav className="surface-card flex items-center justify-between px-4 py-3 sm:px-7 sm:py-4">
+        <p className="max-w-[70vw] truncate text-sm font-semibold tracking-tight sm:max-w-none sm:text-base">
+          {siteName}
+        </p>
         <button
           type="button"
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--line)] bg-white text-[var(--text-muted)] sm:hidden"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[var(--line)] bg-white text-[var(--text-muted)] sm:hidden"
           onClick={() => setIsOpen(true)}
         >
           <svg
@@ -87,7 +89,7 @@ export function Header({ siteName, navItems }: HeaderProps) {
           </svg>
         </button>
 
-        <div className="hidden items-center gap-5 text-sm text-[var(--text-muted)] sm:flex">
+        <div className="hidden items-center gap-4 text-sm text-[var(--text-muted)] sm:flex">
           {navItems.map((item) => {
             const isSectionLink = item.href.startsWith("#");
 
@@ -123,7 +125,7 @@ export function Header({ siteName, navItems }: HeaderProps) {
                     onClick={() => setIsOpen(false)}
                   />
                   <motion.aside
-                    className="fixed right-0 top-0 z-[100] h-dvh w-[84vw] max-w-xs border-l border-[var(--line)] bg-white p-6 shadow-2xl sm:hidden"
+                    className="fixed right-0 top-0 z-[100] h-dvh w-[86vw] max-w-xs overflow-y-auto border-l border-[var(--line)] bg-white p-5 shadow-2xl sm:hidden"
                     initial={{ x: "100%" }}
                     animate={{ x: 0 }}
                     exit={{ x: "100%" }}

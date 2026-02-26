@@ -12,7 +12,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <article
-      className="surface-card flex h-full flex-col px-5 py-5 transition duration-200 hover:shadow-[0_16px_28px_rgba(20,20,20,0.12)]"
+      className="surface-card flex h-full min-w-0 flex-col px-4 py-4 transition duration-200 hover:shadow-[0_16px_28px_rgba(20,20,20,0.12)] sm:px-5 sm:py-5"
     >
       <div className="group">
         {hasLiveUrl ? (
@@ -44,7 +44,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
             />
           </div>
         )}
-        <h3 className="text-xl font-semibold tracking-tight">{project.title}</h3>
+        <h3 className="break-words text-lg font-semibold tracking-tight sm:text-xl">
+          {project.title}
+        </h3>
         <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)]">
           {project.summary}
         </p>
@@ -62,7 +64,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
       <div className="mt-auto pt-5">
         {hasLiveUrl || hasRepoUrl ? (
-          <div className="flex items-center justify-end gap-2">
+          <div className="flex flex-wrap items-center justify-end gap-2">
             {hasLiveUrl && (
               <a
                 href={project.liveUrl}

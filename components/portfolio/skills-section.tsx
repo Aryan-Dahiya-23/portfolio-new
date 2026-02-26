@@ -4,9 +4,11 @@ type SkillsSectionProps = {
 
 export function SkillsSection({ skills }: SkillsSectionProps) {
   return (
-    <section id="skills" className="surface-card overflow-hidden px-6 py-6 sm:px-8">
+    <section id="skills" className="surface-card overflow-hidden px-4 py-5 sm:px-8 sm:py-6">
       <p className="heading-kicker">Skills</p>
-      <h2 className="mt-2 text-3xl font-semibold tracking-tight">Core engineering toolkit</h2>
+      <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+        Core engineering toolkit
+      </h2>
       <div className="skills-marquee mt-5">
         <div className="skills-track">
           {[...skills, ...skills].map((skill, index) => (

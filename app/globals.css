@@ -52,6 +52,7 @@ html::-webkit-scrollbar-thumb:hover {
 
 body {
   min-height: 100vh;
+  overflow-x: clip;
   color: var(--text);
   font-family: var(--font-display);
   background:
@@ -65,8 +66,14 @@ body {
 }
 
 .container-grid {
-  width: min(1120px, calc(100% - 2rem));
+  width: min(1120px, calc(100% - 1.5rem));
   margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .container-grid {
+    width: min(1120px, calc(100% - 2rem));
+  }
 }
 
 .surface-card {
