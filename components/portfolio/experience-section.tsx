@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import type { ExperienceItem, Project } from "@/types/portfolio";
 
 type ExperienceSectionProps = {
@@ -21,24 +20,13 @@ export function ExperienceSection({
       <div className="relative mt-6">
         <div className="absolute bottom-3 left-3 top-3 w-px bg-[var(--line)]" />
         <ul className="space-y-5">
-          {items.map((item, index) => {
+          {items.map((item) => {
             const relatedProjects = projects.filter((project) =>
               item.projectIds.includes(project.id),
             );
 
             return (
-              <motion.li
-                key={item.id}
-                className="relative pl-10"
-                initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                viewport={{ once: true, amount: 0.22 }}
-                transition={{
-                  duration: 0.6,
-                  ease: [0.2, 0.7, 0.2, 1],
-                  delay: 0.12 + index * 0.08,
-                }}
-              >
+              <li key={item.id} className="relative pl-10">
                 <span className="absolute left-0 top-2.5 h-6 w-6 rounded-full border border-[var(--line)] bg-white p-1.5">
                   <span className="block h-full w-full rounded-full bg-[var(--brand)]" />
                 </span>
@@ -102,7 +90,7 @@ export function ExperienceSection({
                     </div>
                   ) : null}
                 </article>
-              </motion.li>
+              </li>
             );
           })}
         </ul>

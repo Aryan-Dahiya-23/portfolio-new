@@ -1,5 +1,6 @@
 "use client";
 
+import type { MouseEvent } from "react";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { createPortal } from "react-dom";
@@ -13,6 +14,34 @@ type HeaderProps = {
 export function Header({ siteName, navItems }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const canUseDOM = typeof document !== "undefined";
+
+  const handleNavClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string,
+    closeMenu = false,
+  ) => {
+    if (closeMenu) {
+      setIsOpen(false);
+    }
+
+    if (!href.startsWith("#")) {
+      return;
+    }
+
+    const targetId = href.slice(1);
+    const target = document.getElementById(targetId);
+
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    if (window.location.hash !== href) {
+      window.history.pushState(null, "", href);
+    }
+  };
 
   useEffect(() => {
     if (!isOpen) {
@@ -69,6 +98,7 @@ export function Header({ siteName, navItems }: HeaderProps) {
                 className="transition hover:text-[var(--text)]"
                 target={isSectionLink ? undefined : "_blank"}
                 rel={isSectionLink ? undefined : "noreferrer"}
+                onClick={(event) => handleNavClick(event, item.href)}
               >
                 {item.label}
               </a>
@@ -131,7 +161,9 @@ export function Header({ siteName, navItems }: HeaderProps) {
                             className="block rounded-lg px-3 py-2.5 text-sm text-[var(--text-muted)] transition hover:bg-[var(--bg-soft)] hover:text-[var(--text)]"
                             target={isSectionLink ? undefined : "_blank"}
                             rel={isSectionLink ? undefined : "noreferrer"}
-                            onClick={() => setIsOpen(false)}
+                            onClick={(event) =>
+                              handleNavClick(event, item.href, true)
+                            }
                           >
                             {item.label}
                           </a>

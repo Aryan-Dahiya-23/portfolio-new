@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased lg:snap-y lg:snap-proximity">{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

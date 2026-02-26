@@ -6,7 +6,6 @@ import { ContactSection } from "@/components/portfolio/contact-section";
 import { ExperienceSection } from "@/components/portfolio/experience-section";
 import { Header } from "@/components/portfolio/header";
 import { HeroSection } from "@/components/portfolio/hero-section";
-import { MotionReveal } from "@/components/portfolio/motion-reveal";
 import { ProjectDrawer } from "@/components/portfolio/project-drawer";
 import { ProjectsSection } from "@/components/portfolio/projects-section";
 import { SkillsSection } from "@/components/portfolio/skills-section";
@@ -47,25 +46,15 @@ export function PortfolioPage() {
         <div className="h-6 sm:h-8" aria-hidden="true" />
 
         <main className="container-grid space-y-8">
-          <MotionReveal className="lg:snap-start">
-            <HeroSection hero={heroData} />
-          </MotionReveal>
-          <MotionReveal delay={0.08} className="lg:snap-start">
-            <SkillsSection skills={skillItems} />
-          </MotionReveal>
-          <MotionReveal delay={0.08} className="lg:snap-start">
-            <ExperienceSection
-              items={experienceItems}
-              projects={experienceProjects}
-              onOpenProject={setActiveProject}
-            />
-          </MotionReveal>
-          <MotionReveal delay={0.07} className="lg:snap-start">
-            <ProjectsSection projects={projectItems} />
-          </MotionReveal>
-          <MotionReveal delay={0.09} className="lg:snap-start">
-            <ContactSection contact={contactData} />
-          </MotionReveal>
+          <HeroSection hero={heroData} />
+          <SkillsSection skills={skillItems} />
+          <ExperienceSection
+            items={experienceItems}
+            projects={experienceProjects}
+            onOpenProject={setActiveProject}
+          />
+          <ProjectsSection projects={projectItems} />
+          <ContactSection contact={contactData} />
         </main>
       </div>
 

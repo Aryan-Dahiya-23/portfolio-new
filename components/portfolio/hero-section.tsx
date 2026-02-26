@@ -1,3 +1,6 @@
+"use client";
+
+import type { MouseEvent } from "react";
 import type { HeroData } from "@/types/portfolio";
 
 type HeroSectionProps = {
@@ -5,7 +8,30 @@ type HeroSectionProps = {
 };
 
 export function HeroSection({ hero }: HeroSectionProps) {
+  const isPrimarySectionLink = hero.primaryCta.href.startsWith("#");
   const isSecondarySectionLink = hero.secondaryCta.href.startsWith("#");
+  const handleSectionClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    if (!href.startsWith("#")) {
+      return;
+    }
+
+    const targetId = href.slice(1);
+    const target = document.getElementById(targetId);
+
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    if (window.location.hash !== href) {
+      window.history.pushState(null, "", href);
+    }
+  };
 
   return (
     <section className="surface-card relative overflow-hidden px-6 py-10 sm:px-10 sm:py-14">
@@ -22,13 +48,17 @@ export function HeroSection({ hero }: HeroSectionProps) {
       <div className="fade-in delay-3 mt-8 flex flex-wrap gap-3">
         <a
           href={hero.primaryCta.href}
-          className="rounded-full bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
+          className="hero-cta-primary rounded-full bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
+          onClick={(event) => handleSectionClick(event, hero.primaryCta.href)}
+          target={isPrimarySectionLink ? undefined : "_blank"}
+          rel={isPrimarySectionLink ? undefined : "noreferrer"}
         >
           {hero.primaryCta.label}
         </a>
         <a
           href={hero.secondaryCta.href}
           className="rounded-full border border-[var(--line)] bg-white px-5 py-2.5 text-sm font-medium transition hover:bg-[var(--bg-soft)]"
+          onClick={(event) => handleSectionClick(event, hero.secondaryCta.href)}
           target={isSecondarySectionLink ? undefined : "_blank"}
           rel={isSecondarySectionLink ? undefined : "noreferrer"}
         >
