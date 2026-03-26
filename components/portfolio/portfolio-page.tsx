@@ -19,6 +19,29 @@ export function PortfolioPage() {
   const [activeProject, setActiveProject] = useState<ExperienceProject | null>(null);
 
   useEffect(() => {
+    const wakeBackend = async () => {
+      try {
+        const response = await fetch("https://chatapp-backend-q3xn.onrender.com/", {
+          method: "GET",
+          cache: "no-store",
+        });
+        const body = await response.text();
+
+        console.log(
+          "[chatapp-backend] status:",
+          response.status,
+          "body:",
+          body.slice(0, 200),
+        );
+      } catch {
+        console.log("[chatapp-backend] request failed");
+      }
+    };
+
+    void wakeBackend();
+  }, []);
+
+  useEffect(() => {
     if (!activeProject) {
       return;
     }
